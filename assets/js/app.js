@@ -1,3 +1,46 @@
+document.addEventListener("DOMContentLoaded", function () {
+  setVh();
+
+  let body = document.getElementsByTagName("html")[0];
+
+  const trigger = document.getElementById("menu-trigger");
+  if (trigger) {
+    trigger.addEventListener("click", function () {
+      body.classList.add("menu-opened");
+      setTimeout(() => {
+        body.classList.add("menu-animated");
+      }, 10);
+    });
+  }
+
+  const closeMenu = document.getElementById("close-menu");
+  if (closeMenu) {
+    closeMenu.addEventListener("click", function () {
+      body.classList.remove("menu-animated");
+      setTimeout(() => {
+        body.classList.remove("menu-opened");
+      }, 300);
+    });
+  }
+
+  let buttons = document.querySelectorAll("header nav a");
+  if (buttons.length) {
+    buttons.forEach((element) => {
+      element.addEventListener("click", () => {
+        body.classList.remove("menu-animated");
+        setTimeout(() => {
+          body.classList.remove("menu-opened");
+        }, 300);
+      });
+    });
+  }
+});
+
+function setVh() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+
 function blink() {
   TweenLite.to('.light, .light-3', 1, {
     autoAlpha: 1, fill: '#ffb0ff',

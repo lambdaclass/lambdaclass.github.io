@@ -232,11 +232,91 @@ height: 70px;
 .glow-line{
   opacity: 0;
 }
+
+#menu-trigger, #close-menu {
+  display: none;
+}
+
  /* Small devices (landscape phones, 576px and up) */
  @media (max-width: 767px) {
-  nav ul li a{
-    font-size: .9rem;
-    margin-left: 1.2rem;
+  #menu-trigger {
+    display: block;
+  }
+
+  nav {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+  }
+
+  html.menu-opened {
+    overflow: hidden;
+  }
+
+  #close-menu {
+    position: absolute;
+    top: 2rem;
+    right: .95rem;
+  }
+
+  html.menu-opened nav #close-menu {
+    display: block;
+  }
+
+  html.menu-opened header nav {
+    opacity: 0;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    pointer-events: all;
+    background: #181248;
+    z-index: 10;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  html.menu-animated header nav {
+    opacity: 1;
+  }
+
+  html.menu-opened header nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6rem 2rem;
+  }
+
+  html.menu-opened header nav ul li {
+    margin-bottom: 2rem;
+  }
+
+  html header nav a {
+    display: block;
+    opacity: 0;
+    transform: translateY(-1rem);
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  html.menu-animated header nav a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  nav ul li a {
+    font-size: 2rem;
+    margin-left: 0;
+    line-height: 1.1;
   }
   .site-title a{
     font-size: 1.3rem;
