@@ -94,13 +94,9 @@ button:hover, button:focus{
   box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
     transform: translate(0px, -3px) scale(1.01)
 }
-#contact--btn{
-  width: 200px;
-  height: 70px;
-}
-#submit{
-  width: 230px;
-  height: 70px;
+#contact--btn, #submit{
+  width: auto;
+  padding: .8rem 1.4rem;
 }
 .section-title{
   color: #222222;
@@ -332,11 +328,6 @@ height: 70px;
     font-size: 13px;
 
   }
-  #contact--btn{
-    width: 105px;
-    height: 40px;
-
-  }
   .about-single h1{
     font-size: 18px;
     margin-top: 1rem;
@@ -414,11 +405,6 @@ height: 70px;
   #hero-area p{
     font-size: 20px;
 
-  }
-  #contact--btn{
-    width: 200px;
-    height: 70px;
-    margin-bottom: 1.6rem;
   }
   .about-single h1{
     font-size: 30px;
